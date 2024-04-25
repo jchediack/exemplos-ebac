@@ -11,15 +11,22 @@ public class ExemploGenerics {
         imprimir(lista);
 
         List<Long> listaLong = new ArrayList<>();
-        listaLong.add(255l);
-        listaLong.add(500l);
+        listaLong.add(255L);
+        listaLong.add(500L);
         imprimir(listaLong);
-
+        System.out.println("*******************");
+        String st1 = retornaPrimeiro(lista);
+        System.out.println(st1);
+        Long st2 = retornaPrimeiro(listaLong);
+        System.out.println(st2);
     }
 
     public static <T> void imprimir(List<T> lista) { // Metodo generico <>
         for (T st: lista) {
             System.out.println(st);
         }
+    }
+    public static <T> T retornaPrimeiro(List<T> lista) {
+        return lista.getFirst();
     }
 }
