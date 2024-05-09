@@ -6,5 +6,6 @@ public class Tarefa19 {
         Class  tabela = Tabela.class;
 
         System.out.println(tabela);
+
     }
 }
