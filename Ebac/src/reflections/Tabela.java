@@ -1,11 +1,11 @@
 package reflections;
 
-import java.lang.annotation.Documented;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.*;
 
 @Documented
+@Target({ElementType.METHOD,ElementType.FIELD,ElementType.CONSTRUCTOR,ElementType.LOCAL_VARIABLE,ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Tabela {
-        String nomeTabela();
+        String value();
+
 }

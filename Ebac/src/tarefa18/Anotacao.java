@@ -1,6 +1,9 @@
 package tarefa18;
 
-@Tabela(nomeTabela = "Cliente")
+@Tabela(value = "Cliente", nomeTabela = "Cliente")
 public class Anotacao {
 
+    String value() {
+        return null;
+    }
 }
