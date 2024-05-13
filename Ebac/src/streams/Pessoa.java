@@ -53,7 +53,7 @@ public class Pessoa {
 
     public List<Pessoa> populaPessoas() {
         Pessoa pessoa1 = new Pessoa("001", "Seiya", "Grecia", 16 );
-        Pessoa pessoa2 = new Pessoa("002", "Ikki", "Brasil", 18 );
+        Pessoa pessoa2 = new Pessoa("002", "Ikki", "Brasil", 19 );
         Pessoa pessoa3 = new Pessoa("003", "Shun", "Brasil", 14 );
         Pessoa pessoa4 = new Pessoa("004", "Hyoga", "Siberia", 15 );
         Pessoa pessoa5 = new Pessoa("005", "Shiryu", "Rozan", 16 );
@@ -71,5 +71,15 @@ public class Pessoa {
     @Override
     public int hashCode() {
         return Objects.hash(id, nome);
+    }
+
+    @Override
+    public String toString() {
+        return "Pessoa {" +
+                "ID = '" + id + '\'' +
+                ", Nome = '" + nome + '\'' +
+                ", Nacionalidade = '" + nacionalidade + '\'' +
+                ", Idade = " + idade +
+                '}';
     }
 }
