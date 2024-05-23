@@ -2,8 +2,8 @@ package mod25ExemploVendas;
 
 public class ClienteDaoMock implements IClienteDAO {
     @Override
-    public void salvar(Cliente cliente) {
-
+    public Boolean salvar(Cliente cliente) {
+    return true;
     }
 
     @Override
@@ -11,5 +11,15 @@ public class ClienteDaoMock implements IClienteDAO {
         Cliente cliente = new Cliente();
         cliente.setCpf(cpf);
         return cliente;
+    }
+
+    @Override
+    public void excluir(Long cpf) {
+
+    }
+
+    @Override
+    public void alterar(Cliente cliente) {
+
     }
 }

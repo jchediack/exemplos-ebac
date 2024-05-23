@@ -23,12 +23,27 @@ class ClienteServiceTest {
         cliente.setNumero(74);
         cliente.setCidade("Contagem");
         cliente.setEstado("MG");
-        clienteService.salvar(cliente);
+
     }
 
     @Test
     public void pesquisarCliente(){
         Cliente clienteConsultado = clienteService.buscarPorCPF(cliente.getCpf());
         Assertions.assertNotNull(clienteConsultado);
+    }
+    @Test
+    public void salvarCliente(){
+        Boolean retorno = clienteService.salvar(cliente);
+        Assertions.assertTrue(retorno);
+    }
+    @Test
+    public void excluirCliente() {
+        clienteService.excluir(cliente.getCpf());
+    }
+    @Test
+    public void alterarCliente() {
+        cliente.setNome("Jefferson Henrique");
+        clienteService.alterar(cliente);
+        Assertions.assertEquals("Jefferson Henrique", cliente.getNome());
     }
 }
