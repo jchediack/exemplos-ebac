@@ -9,8 +9,10 @@ public class ConnectionFactory {
     private ConnectionFactory(Connection connection) {
 
     }
-    public static Connection getConnection() {
+    public static Connection getConnection() throws SQLException {
         if (connection == null) {
+            connection = initConnection();
+        } else if (connection!= null && connection.isClosed()) {
             connection = initConnection();
         }
         return connection;
@@ -19,7 +21,7 @@ public class ConnectionFactory {
     private static Connection initConnection() {
         try {
             return DriverManager.getConnection(
-                    "jdbc:postgresql://localhost:15432/vendas_online", "postgres", "admin");
+                    "jdbc:postgresql://localhost:16543//vendas_online", "postgres", "admin");
         } catch (SQLException e) {
             throw  new RuntimeException(e);
         }
