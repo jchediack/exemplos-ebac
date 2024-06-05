@@ -8,8 +8,8 @@ public class ClienteTest {
         IClienteDAO dao = new ClienteDAO();
         Cliente cliente = new Cliente();
 
-        cliente.setCodigo("03");
-        cliente.setNome("Jefferson Henrique");
+        cliente.setCodigo("09");
+        cliente.setNome("Dany Borges");
 
         Integer qtd = dao.cadastrar(cliente);
         Assertions.assertTrue(qtd == 1);

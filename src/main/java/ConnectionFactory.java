@@ -19,7 +19,10 @@ public class ConnectionFactory {
     private static Connection initConnection() {
         try {
             return DriverManager.getConnection(
-                    "jdbc:postgresql://localhost:5432/EBAC", "postgres", "root");
+                    // Configuração MacMini
+                    "jdbc:postgresql://localhost:15432/vendas_online", "postgres", "admin");
+                    // Configuração Notebook
+                    //"jdbc:postgresql://localhost:5432/EBAC", "postgres", "root");
         } catch (SQLException e) {
             throw  new RuntimeException(e);
         }
