@@ -8,19 +8,20 @@ public class ClienteTest {
         IClienteDAO dao = new ClienteDAO();
         Cliente cliente = new Cliente();
 
-        cliente.setCodigo("09");
-        cliente.setNome("Dany Borges");
+        cliente.setCodigo("10");
+        cliente.setNome("Gilcelia Moreira");
 
         Integer qtd = dao.cadastrar(cliente);
         Assertions.assertTrue(qtd == 1);
-/*
+
         Cliente clienteBD = dao.consultar(cliente.getCodigo());
         Assertions.assertNotNull(clienteBD);
         Assertions.assertNotNull(clienteBD.getId());
         Assertions.assertEquals(cliente.getCodigo(), clienteBD.getCodigo());
         Assertions.assertEquals(cliente.getNome(), clienteBD.getNome());
 
- */
+        Integer qtdDel = dao.excluir(clienteBD);
+        Assertions.assertNotNull(qtdDel);
     }
 
 }
